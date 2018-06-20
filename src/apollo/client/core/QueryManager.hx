@@ -3,7 +3,6 @@ package apollo.client.core;
 import js.Error;
 import js.Promise;
 
-import apollo.cache.DataProxy.DiffResult;
 import apollo.client.core.ObservableQuery;
 import apollo.client.core.WatchQueryOptions;
 import apollo.client.data.DataStore;
@@ -15,17 +14,6 @@ import apollo.link.FetchResult;
 import apollo.link.Observable;
 import apollo.util.Noise;
 import graphql.ASTDefs.DocumentNode;
-
-typedef QueryInfo = {
-	var listeners:Array<QueryListener>;
-	var invalidated:Bool;
-	var newData:Null<DiffResult<Any>>;
-	var document:Null<DocumentNode>;
-	var lastRequestId:Null<Int>;
-	var observableQuery:Null<ObservableQuery_1<Any>>;
-	var subscriptions:Array<Subscription>;
-	@:optional var cancel:Void->Void;
-}
 
 typedef QueryPromise = {
 	var resolve:ApolloQueryResult<Any>->Void;

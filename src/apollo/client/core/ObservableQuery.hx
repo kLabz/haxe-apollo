@@ -1,26 +1,12 @@
 package apollo.client.core;
 
-import haxe.extern.EitherType;
 import js.Promise;
 
+import apollo.client.core.SubscribeToMoreOptions;
 import apollo.client.core.WatchQueryOptions;
 import apollo.client.error.ApolloError;
 import apollo.client.scheduler.QueryScheduler;
 import apollo.util.Observable;
-import graphql.GraphQLError;
-
-typedef ApolloCurrentResult<T> = {
-	var data:EitherType<T, {}>;
-	@:optional var errors:Array<GraphQLError>;
-	var loading:Bool;
-	var networkStatus:NetworkStatus;
-	@:optional var error:ApolloError;
-	@:optional var partial:Bool;
-}
-
-typedef UpdateQueryOptions<TVariables> = {
-	@:optional var variables:TVariables;
-}
 
 typedef ObservableQueryInit<TVariables> = {
 	var scheduler:QueryScheduler<Any>;

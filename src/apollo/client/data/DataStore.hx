@@ -4,16 +4,9 @@ import js.Promise;
 
 import apollo.cache.ApolloCache;
 import apollo.cache.DataProxy;
-import apollo.client.core.MutationQueryReducer;
-import apollo.client.data.QueryStore;
 import apollo.util.Noise;
 import graphql.ASTDefs.DocumentNode;
 import graphql.ExecutionResult;
-
-typedef QueryWithUpdater = {
-	var updater:MutationQueryReducer<{}>;
-	var query:QueryStoreValue;
-}
 
 typedef MutationComplete = {
 	var mutationId:String;

@@ -4,19 +4,8 @@ import haxe.extern.EitherType;
 import haxe.extern.Rest;
 import js.Promise;
 
+import apollo.link.Subscription;
 import apollo.util.Noise;
-
-typedef SubscriptionObserver<T> = {
-	var closed:Bool;
-	var next:T->Void;
-	var error:Any->Void;
-	var complete:Void->Void;
-}
-
-interface Subscription {
-	var closed:Bool;
-	function unsubscribe():Void;
-}
 
 typedef Observer<T> = {
 	@:optional var start:Subscription->Any;
@@ -24,8 +13,6 @@ typedef Observer<T> = {
 	@:optional var error:Any->Void;
 	@:optional var complete:Void->Void;
 }
-
-typedef Subscriber<T> = EitherType<SubscriptionObserver<T>->Void, EitherType<Void->Void, Subscription>>;
 
 typedef ObservableLike<T> = {
 	@:optional var subscribe:Subscriber<T>;
