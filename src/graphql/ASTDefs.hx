@@ -5,13 +5,7 @@ package graphql;
 
 typedef TokenKindEnum = TokenKind;
 
-// Simplified for now
-typedef Source = {
-	var string:String;
-	var start:Int;
-	var end:Int;
-	var length:Int;
-}
+typedef Source = graphql.parser.StringSlice;
 
 typedef BaseNode = {
 	kind:String,
