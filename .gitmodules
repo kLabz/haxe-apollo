@@ -1,0 +1,3 @@
+[submodule "haxe-graphql"]
+	path = haxe-graphql
+	url = git@github.com:jcward/haxe-graphql.git
