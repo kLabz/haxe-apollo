@@ -1,9 +1,9 @@
 {
   "name": "apollo",
-  "description": "TODO",
+  "description": "Externs for react-apollo",
   "version": "0.1.0",
-  "releasenote": "TODO",
-  "url": "https://gitlab.com/k-labz/haxe-oss/haxe-apollo",
+  "releasenote": "First release",
+  "url": "https://github.com/kLabz/haxe-apollo",
   "license": "MIT",
   "tags": [],
   "classPath": "src",
