@@ -8,8 +8,11 @@ typedef HttpLinkOptions = {
 	@:optional var useGETForQueries:Bool;
 }
 
+@:jsRequire('apollo-link-http', 'createHttpLink')
 extern class HttpLink extends ApolloLink {
-	public var requester:RequestHandler;
-
+	@:selfCall
 	public function new(?options:HttpLinkOptions);
+
+	@:selfCall
+	public static function createHttpLink(?options:HttpLinkOptions):HttpLink;
 }

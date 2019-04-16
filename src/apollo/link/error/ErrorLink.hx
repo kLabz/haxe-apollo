@@ -6,8 +6,11 @@ import apollo.link.NextLink;
 import apollo.link.Observable;
 import apollo.link.Operation;
 
+@:jsRequire('apollo-link-error', 'onError')
 extern class ErrorLink extends ApolloLink {
+	@:selfCall
 	public function new(errorHandler:ErrorHandler);
 
-	public function request(operation:Operation, forward:NextLink):Null<Observable<FetchResult>>;
+	@:selfCall
+	public static function onError(errorHandler:ErrorHandler):ErrorLink;
 }
