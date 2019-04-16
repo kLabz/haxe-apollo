@@ -1,8 +1,8 @@
 {
   "name": "apollo",
   "description": "Externs for react-apollo",
-  "version": "0.1.1",
-  "releasenote": "Update Mutation types",
+  "version": "0.1.2",
+  "releasenote": "Add InMemoryCache + some fixes",
   "url": "https://github.com/kLabz/haxe-apollo",
   "license": "MIT",
   "tags": [],
