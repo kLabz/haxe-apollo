@@ -1,7 +1,7 @@
 {
   "name": "apollo",
   "description": "Externs for react-apollo",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "releasenote": "Add InMemoryCache + some fixes",
   "url": "https://github.com/kLabz/haxe-apollo",
   "license": "MIT",
