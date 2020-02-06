@@ -18,7 +18,7 @@ typedef MutationResult<TData> = {
 	@:optional var error:ApolloError;
 	var loading:Bool;
 	var called:Bool;
-	var client:ApolloClient<{}>;
+	var client:ApolloClient<Any>;
 }
 
 typedef MutationUpdaterFn<T> = DataProxy -> FetchResult_1<T> -> Void;
@@ -56,7 +56,7 @@ typedef MutationProps<TData, TVariables> = {
 	@:optional var update:MutationUpdaterFn<TData>;
 	@:optional var onCompleted:TData->Void;
 	@:optional var onError:ApolloError->Void;
-	@:optional var client:ApolloClient<{}>;
+	@:optional var client:ApolloClient<Any>;
 	@:optional var context:Dynamic<Any>;
 }
 

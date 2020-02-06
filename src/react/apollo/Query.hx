@@ -29,7 +29,7 @@ typedef QueryProps<TData, TVariables> = {
 	@:optional var ssr:Bool;
 	@:optional var displayName:String;
 	@:optional var skip:Bool;
-	@:optional var client:ApolloClient<{}>;
+	@:optional var client:ApolloClient<Any>;
 	@:optional var context:Dynamic<Any>;
 }
 
