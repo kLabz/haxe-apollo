@@ -1,8 +1,8 @@
 {
   "name": "apollo",
   "description": "Externs for react-apollo",
-  "version": "0.2.1",
-  "releasenote": "Add graphql-tag basic extern",
+  "version": "0.2.2",
+  "releasenote": "Add @:graphql helper for external queries",
   "url": "https://github.com/kLabz/haxe-apollo",
   "license": "MIT",
   "tags": [],
