@@ -49,8 +49,8 @@ class MacroUtils {
 	public static function tryGetType(path:TypePath):Null<Type> {
 		return try {
 			Context.resolveType(TPath(path), Context.currentPos());
-		} catch (e:haxe.Exception) {
-			var e:String = e.message;
+		} catch (e:Dynamic) {
+			var e = Std.string(e);
 
 			if (
 				!StringTools.startsWith(e, 'Type not found')
