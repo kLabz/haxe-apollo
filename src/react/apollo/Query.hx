@@ -20,7 +20,7 @@ typedef QueryResult<TData, TVariables> = {
 
 typedef QueryProps<TData, TVariables> = {
 	var query:DocumentNode;
-	var children:QueryResult<TData, TVariables>->ReactElement;
+	var children:QueryResult<TData, TVariables>->ReactFragment;
 	@:optional var fetchPolicy:FetchPolicy;
 	@:optional var errorPolicy:ErrorPolicy;
 	@:optional var notifyOnNetworkStatusChange:Bool;

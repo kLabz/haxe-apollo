@@ -1,8 +1,8 @@
 {
   "name": "apollo",
   "description": "Externs for react-apollo",
-  "version": "0.2.2",
-  "releasenote": "Add @:graphql helper for external queries",
+  "version": "0.2.3",
+  "releasenote": "Improve typing for Query's children prop",
   "url": "https://github.com/kLabz/haxe-apollo",
   "license": "MIT",
   "tags": [],
