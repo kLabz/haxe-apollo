@@ -44,7 +44,10 @@ abstract MutationFn<TData, TVariables>(Function)
 	from Void->Promise<FetchResult_1<TData>>
 	from ?MutationOptions<TData, TVariables>->Promise<Noise>
 	from ?MutationOptions<TData, TVariables>->Promise<FetchResult_1<TData>>
-	{}
+{
+	@:to
+	public inline function toCallback():Void->Void return cast this;
+}
 
 typedef MutationProps<TData, TVariables> = {
 	var mutation:DocumentNode;
