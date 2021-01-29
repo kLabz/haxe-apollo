@@ -1,8 +1,8 @@
 {
   "name": "apollo",
   "description": "Externs for react-apollo",
-  "version": "0.2.4",
-  "releasenote": "Revert haxe.Exception change for now",
+  "version": "0.2.5",
+  "releasenote": "Mutation: add @:to Void->Void",
   "url": "https://github.com/kLabz/haxe-apollo",
   "license": "MIT",
   "tags": [],
