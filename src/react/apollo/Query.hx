@@ -10,12 +10,19 @@ import react.ReactComponent;
 import graphql.ASTDefs.DocumentNode;
 
 typedef QueryResult<TData, TVariables> = {
+	> QueryHelpers<TVariables>,
+
 	// > ObservableQueryFields<TData, TVariables>, TODO
 	var client:ApolloClient<Any>;
 	var data:Null<TData>;
 	var loading:Bool;
 	var networkStatus:NetworkStatus;
 	@:optional var error:ApolloError;
+}
+
+typedef QueryHelpers<TVariables> = {
+	var variables:TVariables;
+	var refetch:?TVariables->Void; // Partial<TVariables> ...
 }
 
 typedef QueryProps<TData, TVariables> = {
