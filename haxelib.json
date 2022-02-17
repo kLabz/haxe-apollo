@@ -1,8 +1,8 @@
 {
   "name": "apollo",
   "description": "Externs for react-apollo",
-  "version": "0.2.5",
-  "releasenote": "Mutation: add @:to Void->Void",
+  "version": "0.3.0",
+  "releasenote": "Add query helpers",
   "url": "https://github.com/kLabz/haxe-apollo",
   "license": "MIT",
   "tags": [],

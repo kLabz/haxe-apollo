@@ -1,5 +1,7 @@
 package react.apollo;
 
+import js.lib.Promise;
+
 import apollo.client.ApolloClient;
 import apollo.client.core.ErrorPolicy;
 import apollo.client.core.FetchPolicy;
@@ -10,13 +12,49 @@ import react.ReactComponent;
 import graphql.ASTDefs.DocumentNode;
 
 typedef QueryResult<TData, TVariables> = {
-	// > ObservableQueryFields<TData, TVariables>, TODO
+	> ApolloQueryResult<TData>,
+
 	var client:ApolloClient<Any>;
-	var data:Null<TData>;
+	var called:Bool;
 	var loading:Bool;
 	var networkStatus:NetworkStatus;
+	var variables:TVariables;
+	@:optional var previousData:TData;
 	@:optional var error:ApolloError;
+
+	var refetch:(
+		?variables:TVariables // Partial<TVariables> ...
+	)->Promise<ApolloQueryResult<TData>>;
+
+	var fetchMore:{
+		?query:DocumentNode,
+		?variables:TVariables,
+		?updateQuery:TUpdateQuery<TData, TVariables>
+	}->Promise<ApolloQueryResult<TData>>;
+
+	var startPolling:Int->Void;
+	var stopPolling:Void->Void;
+
+	var subscribeToMore:(
+		options:{
+			document:DocumentNode,
+			?variables:TVariables,
+			?updateQuery:TUpdateQuery<TData, TVariables>,
+			?onError:ApolloError->Void
+		}
+	)->(()->Void);
+
+	var updateQuery:TUpdateQuery<TData, TVariables>;
 }
+
+typedef ApolloQueryResult<TData> = {
+	var data:Null<TData>;
+};
+
+typedef TUpdateQuery<TData, TVariables> = (
+	previousResults:TData,
+	options:{variables:TVariables}
+)->TData;
 
 typedef QueryProps<TData, TVariables> = {
 	var query:DocumentNode;
